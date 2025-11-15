@@ -1,0 +1,277 @@
+/* --- Imports for a cleaner font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Animation Keyframes --- */
+@keyframes single-course-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Section Base --- */
+.single-course-section {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fb 0%, #e8ebf0 100%);
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Main Container --- */
+.single-course-container {
+    max-width: 1150px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    animation: single-course-fade-in 0.8s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- Hover Glow Effect --- */
+.single-course-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Image Wrapper --- */
+.single-course-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-course-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.single-course-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.single-course-image-wrapper:hover img {
+    transform: scale(1.08);
+}
+
+.single-course-image-wrapper:hover::after {
+    opacity: 1;
+}
+
+/* --- Details Column --- */
+.single-course-details-wrapper {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Title --- */
+.single-course-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+/* --- Meta Pills --- */
+.single-course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.single-course-meta-item {
+    background: linear-gradient(135deg, #f4f7fc, #e9eef5);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.single-course-meta-item:hover {
+    background: #dfe7f3;
+    transform: scale(1.05);
+}
+
+/* --- Description --- */
+.single-course-description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+#single-course-more-text {
+    display: none;
+}
+
+/* --- Read More Button --- */
+#single-course-toggle-btn {
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    border: none;
+    color: #333;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#single-course-toggle-btn:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d3d3d3);
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- */
+.single-course-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.single-course-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* --- Enroll Button --- */
+.single-course-enroll-btn {
+    text-decoration: none;
+    background: linear-gradient(135deg, #2A1A1F, #4a3038);
+    color: #ffffff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(42, 26, 31, 0.25);
+}
+
+.single-course-enroll-btn:hover {
+    background: linear-gradient(135deg, #4a3038, #2A1A1F);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(42, 26, 31, 0.35);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .single-course-container {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+
+    .single-course-details-wrapper {
+        padding: 2rem;
+    }
+
+    .single-course-footer {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .single-course-enroll-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* --- End of Single Course Page Styles --- */
+/* =================================== */
+
+
+.single-batch-scope .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.single-batch-scope .section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.single-batch-scope.single-batch-section {
+  padding: 0px 0;
+  background-color: #f5f3f7;
+}
+
+.single-batch-scope .single-batch-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.single-batch-scope .single-batch-card {
+  background-color: #8a8a8a;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  flex-basis: 420px;
+  flex-grow: 1;
+  max-width: 450px;
+}
+
+.single-batch-scope .single-batch-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.single-batch-scope .single-batch-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.single-batch-scope .single-batch-card p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.single-batch-scope .btn-enroll {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.single-batch-scope .btn-enroll:hover {
+  background-color: #555555;
+}

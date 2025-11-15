@@ -1,0 +1,113 @@
+/* =================== GALLERY PAGE =================== */
+:root { --bg:#FAE9D8; --text:#2A1A1F; --primary:#4B244A; --accent:#A03C7D; --secondary:#F9A828; }
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);}
+.header-scope .active{background:#444;}
+.gallery-section{padding:60px 5%;text-align:center;}
+.section-title{font-size:2rem;color:var(--primary);margin-bottom:40px;}
+.gallery-grid{columns:3 300px;column-gap:16px;}
+.gallery-grid img{width:100%;border-radius:12px;margin-bottom:16px;box-shadow:0 6px 12px rgba(0,0,0,.12);transition:.25s ease;}
+.gallery-grid img:hover{transform:scale(1.02);box-shadow:0 12px 24px rgba(0,0,0,.2);}
+@media(max-width:768px){.gallery-grid{columns:2 200px}}
+@media(max-width:520px){.gallery-grid{columns:1 100%}}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.cad-gallery-section {
+  background-color: #141414;
+  padding: 80px 5%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.cad-gallery-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #f9a828, #a03c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Masonry Grid Layout */
+.cad-gallery-grid {
+  columns: 3; /* number of columns */
+  column-gap: 20px;
+}
+
+.cad-gallery-item {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 12px;
+  break-inside: avoid;
+  animation: fadeUp 1s ease forwards;
+}
+
+.cad-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.5s ease;
+  border-radius: 12px;
+  filter: brightness(85%);
+}
+
+/* Image Sizes for Visual Variety */
+.cad-gallery-item.tall img {
+  height: 420px;
+  object-fit: cover;
+}
+
+.cad-gallery-item.wide img {
+  height: 280px;
+  object-fit: cover;
+}
+
+.cad-gallery-item img:hover {
+  transform: scale(1.07);
+  filter: brightness(100%);
+}
+
+/* Subtle overlay animation */
+.cad-gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 70%, rgba(0,0,0,0.6));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 12px;
+}
+
+.cad-gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* Fade up on load */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cad-gallery-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .cad-gallery-grid {
+    columns: 1;
+  }
+
+  .cad-gallery-item img {
+    height: auto;
+  }
+}

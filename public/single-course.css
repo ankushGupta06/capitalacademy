@@ -1,0 +1,746 @@
+/* --- Imports for a cleaner font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- Animation Keyframes (These are global and cannot be scoped) --- */
+@keyframes single-course-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Section Base --- */
+/* This is our root, so it doesn't need a prefix */
+.single-course-section {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fb 0%, #e8ebf0 100%);
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Main Container --- */
+.single-course-section .single-course-container {
+    max-width: 1150px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    animation: single-course-fade-in 0.8s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* --- Hover Glow Effect --- */
+.single-course-section .single-course-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Image Wrapper --- */
+.single-course-section .single-course-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-course-section .single-course-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.single-course-section .single-course-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.single-course-section .single-course-image-wrapper:hover img {
+    transform: scale(1.08);
+}
+
+.single-course-section .single-course-image-wrapper:hover::after {
+    opacity: 1;
+}
+
+/* --- Details Column --- */
+.single-course-section .single-course-details-wrapper {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Title --- */
+.single-course-section .single-course-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+}
+
+/* --- Meta Pills --- */
+.single-course-section .single-course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.single-course-section .single-course-meta-item {
+    background: linear-gradient(135deg, #f4f7fc, #e9eef5);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.single-course-section .single-course-meta-item:hover {
+    background: #dfe7f3;
+    transform: scale(1.05);
+}
+
+/* --- Description --- */
+.single-course-section .single-course-description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.single-course-section #single-course-more-text {
+    display: none;
+}
+
+/* Note: I added a dot for scoping, but your HTML doesn't have this element */
+.single-course-section #single-course-dots {
+    /* (styles for dots if you add them) */
+}
+
+/* --- Read More Button --- */
+/* Note: I'm scoping this ID, but your HTML doesn't have this button */
+.single-course-section #single-course-toggle-btn {
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    border: none;
+    color: #333;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.single-course-section #single-course-toggle-btn:hover {
+    background: linear-gradient(135deg, #e0e0e0, #d3d3d3);
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- */
+.single-course-section .single-course-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+/* Note: Scoping this class, though it's not in your HTML */
+.single-course-section .single-course-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* --- Enroll Button --- */
+.single-course-section .single-course-enroll-btn {
+    text-decoration: none;
+    background: linear-gradient(135deg, #2A1A1F, #4a3038);
+    color: #ffffff;
+    padding: 0.85rem 1.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(42, 26, 31, 0.25);
+}
+
+.single-course-section .single-course-enroll-btn:hover {
+    background: linear-gradient(135deg, #4a3038, #2A1A1F);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(42, 26, 31, 0.35);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .single-course-section .single-course-container {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+
+    .single-course-section .single-course-details-wrapper {
+        padding: 2rem;
+    }
+
+    .single-course-section .single-course-footer {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .single-course-section .single-course-enroll-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* --- End of Single Course Page Styles --- */
+/* =================================== */
+/* === BATCH COMPONENT (CORRECTED) === */
+
+/* These were already correctly scoped */
+.single-batch-scope .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.single-batch-scope .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.single-batch-scope.single-batch-section {
+    padding: 0px 0;
+    background-color: #f5f3f7;
+}
+
+.single-batch-scope .single-batch-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.single-batch-scope .single-batch-card {
+    background-color: #8a8a8a;
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    flex-basis: 420px;
+    flex-grow: 1;
+    max-width: 450px;
+}
+
+.single-batch-scope .single-batch-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.single-batch-scope .single-batch-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.single-batch-scope .single-batch-card p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.single-batch-scope .btn-enroll {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.single-batch-scope .btn-enroll:hover {
+    background-color: #555555;
+}
+
+/* --- CORRECTION: These rules were not scoped, so I added the prefix --- */
+.single-batch-scope .single-batch-card {
+    height: 260px; /* uniform height */
+    width: 100%; /* full responsive width */
+    background-size: cover; /* perfect cover fill */
+    background-position: center; /* center crop */
+    background-repeat: no-repeat; /* no repeat */
+    border-radius: 12px; /* smooth corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-batch-scope .single-batch-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+}
+
+.single-batch-scope .single-batch-card h3,
+.single-batch-scope .single-batch-card p {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+/* =================================== */
+/* 1. HEADER STYLES                   */
+/* =================================== */
+.header-scope {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  z-index: 10; position: relative;
+}
+
+.site-header { height: var(--header-height); }
+
+.header-scope a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Header Top --- */
+.header-scope-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-scope-top-left {
+  display: flex;
+  flex-direction: column;  /* Stacks items vertically */
+  align-items: flex-start; /* Aligns them to the left */
+  gap: 8px;                /* Sets the vertical space between them */
+}
+
+/* --- REMOVED --- */
+/* .header-scope-icon-link rules removed */
+
+/* --- NEW / REPLACED --- */
+/* Replaces .header-scope-login-link */
+.header-scope-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between icon and text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.header-scope-contact-link i {
+  font-size: 1.1rem; /* Adjusted icon size */
+  color: #888; /* Neutral icon color */
+}
+
+.header-scope-contact-link:hover {
+  color: #000; /* Darker on hover */
+}
+/* --- END OF CHANGES --- */
+
+
+/* Center Logo */
+.header-scope-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-scope-logo-icon {
+  color: #4a4a9f;
+  margin-right: 8px;
+  font-size: 2.2rem;
+}
+
+.header-scope-logo-text {
+  background: linear-gradient(to right, #4a4a9f, #a03c7d, #d97d51, #f9a828);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Right Side Social Icons */
+.header-scope-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-scope-social-icons a i {
+  font-size: 1.3rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.header-scope-social-icons a:hover i {
+  color: #000;
+}
+
+/* --- Bottom Navigation --- */
+.header-scope-bottom {
+  background-color: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-scope-main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-scope-nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.header-scope-nav-menu a {
+  display: block;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease;
+}
+
+/* Capitalize all except SDGS link */
+.header-scope-nav-menu li:not(:nth-child(6)) a {
+  text-transform: capitalize;
+}
+
+.header-scope-nav-menu li:nth-child(6) a {
+  text-transform: uppercase;
+}
+
+.header-scope-nav-menu a:hover {
+  background-color: #444;
+}
+
+/* --- Replace text logo with image --- */
+.header-logo-img {
+  height: 70px;/* adjust as needed */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Ensure logo aligns perfectly with header center */
+.header-scope-top-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Mobile toggle */
+.header-scope-mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+
+/* =================================== */
+/* 3. RESPONSIVE HEADER STYLES         */
+/* =================================== */
+
+@media (max-width: 900px) {
+
+  /* --- Allow header to grow vertically --- */
+  .site-header {
+    height: auto; /* Allow header to grow as content stacks */
+  }
+
+  /* --- Top Bar: Stack all content --- */
+  .header-scope-top {
+    flex-direction: column; /* Stack all top bar items vertically */
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  /* --- Top Bar: Re-order items --- */
+  .header-scope-top-center {
+    order: 1; /* Logo first */
+  }
+  
+  .header-scope-top-left {
+    order: 2; /* Contact info second */
+    flex-direction: row; /* Show contact info side-by-side */
+    flex-wrap: wrap; /* Allow wrapping if screen is tiny */
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .header-scope-top-right {
+    order: 3; /* Social icons last */
+  }
+
+  /* --- Top Bar: Adjust logo size --- */
+  .header-scope-logo {
+    font-size: 1.5rem; /* Smaller font for mobile logo */
+    text-align: center;
+  }
+  
+  .header-logo-img {
+    height: 50px; /* Smaller logo image */
+  }
+  
+  /* --- Bottom Bar: Reposition for hamburger --- */
+  .header-scope-bottom {
+    justify-content: flex-end; /* Push hamburger button to the right */
+    padding: 0 5%; /* Add some padding so icon isn't on the edge */
+  }
+
+  .header-scope-main-nav {
+    position: relative; /* CRITICAL: Anchors the absolute-positioned menu */
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* --- Hamburger Button --- */
+  .header-scope-mobile-nav-toggle {
+    display: block; /* Show the hamburger button */
+    background: none;
+    border: none;
+    color: #ffffff; /* White icon to match nav text */
+    font-size: 1.8rem;
+    padding: 10px; /* Makes it easier to tap */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .header-scope-mobile-nav-toggle:hover {
+    color: #ddd;
+  }
+  
+  /* --- Navigation Menu (Dropdown) --- */
+  .header-scope-nav-menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position it right below the nav bar */
+    left: 0;
+    background-color: #2c2c2c;
+    z-index: 1000;
+    border-top: 1px solid #444;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Add depth */
+  }
+
+  /* --- This class is toggled by JavaScript --- */
+  .header-scope-nav-menu.active {
+    display: flex; /* Show the menu */
+  }
+
+  .header-scope-nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-scope-nav-menu a {
+    padding: 15px; /* Make tap targets larger */
+    border-bottom: 1px solid #444;
+  }
+
+  .header-scope-nav-menu li:last-child a {
+    border-bottom: none; /* Remove border from last item */
+  }
+}
+
+
+
+/* =================================== */
+/* FOOTER SECTION                      */
+/* =================================== */
+
+.footer-scope.site-footer {
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+/* --- Footer Main Content (4-column grid) --- */
+.footer-scope .footer-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Shared Column Styles --- */
+.footer-scope .footer-title {
+  color: #999999;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.footer-scope .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-scope .footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-scope .footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-scope .footer-links a:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+/* --- Column 1: Logo & Affiliates --- */
+.footer-scope .logo-affiliates .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.footer-scope .logo-affiliates .footer-logo .logo-icon {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.footer-scope .logo-affiliates .footer-logo small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #dddddd;
+  line-height: 1.2;
+}
+
+.footer-scope .logo-affiliates .footer-title {
+  margin-top: 25px;
+}
+
+.footer-scope .logo-affiliates .emblem {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* --- Column 4: Get in Touch --- */
+.footer-scope .get-in-touch p {
+  font-size: 0.95rem;
+  margin: 0 0 15px 0;
+}
+
+.footer-scope .get-in-touch a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-scope .get-in-touch a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer Bottom (Copyright Bar) --- */
+.footer-scope .footer-bottom {
+  background-color: #1a1a1a;
+  color: #888888;
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.8rem;
+}
+
+.footer-scope .footer-bottom p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* --- Responsive (Mobile) View --- */
+@media (max-width: 900px) {
+  .footer-scope .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-scope .footer-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-scope .footer-column {
+    /* text-align: center; */
+  }
+
+  .footer-scope .logo-affiliates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-scope .footer-links {
+    /* text-align: center; */
+  }
+}

@@ -1,0 +1,2169 @@
+/* =================================== */
+/* 1. GLOBAL STYLES (FOUNDATION)       */
+/* =================================== */
+
+/* --- Universal Reset --- */
+/* This is the combination of all the '*' rules. We only need one. */
+
+
+:root { --header-height: 150px;
+  --bg: #f6d6b6; }
+
+html { scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- HTML & Body Defaults --- */
+/* This is the combination of all the 'body' rules. */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff; /* Default to white. Sections can override this. */
+    overflow-x: hidden; /* Prevents unwanted horizontal scroll */
+}
+
+/* --- Global Element Styling --- */
+a {
+    text-decoration: none;
+    color: inherit; /* Links will match the color of their parent text. */
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+ul {
+    list-style-position: inside; /* Good default for bullet lists */
+}
+
+/* =================================== */
+/* 1. HEADER STYLES                   */
+/* =================================== */
+.header-scope {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  z-index: 10; position: relative;
+}
+
+.site-header { height: var(--header-height); }
+
+.header-scope a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Header Top --- */
+.header-scope-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-scope-top-left {
+  display: flex;
+  flex-direction: column;  /* Stacks items vertically */
+  align-items: flex-start; /* Aligns them to the left */
+  gap: 8px;                /* Sets the vertical space between them */
+}
+
+/* --- REMOVED --- */
+/* .header-scope-icon-link rules removed */
+
+/* --- NEW / REPLACED --- */
+/* Replaces .header-scope-login-link */
+.header-scope-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Spacing between icon and text */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.header-scope-contact-link i {
+  font-size: 1.1rem; /* Adjusted icon size */
+  color: #888; /* Neutral icon color */
+}
+
+.header-scope-contact-link:hover {
+  color: #000; /* Darker on hover */
+}
+/* --- END OF CHANGES --- */
+
+
+/* Center Logo */
+.header-scope-logo {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-scope-logo-icon {
+  color: #4a4a9f;
+  margin-right: 8px;
+  font-size: 2.2rem;
+}
+
+.header-scope-logo-text {
+  background: linear-gradient(to right, #4a4a9f, #a03c7d, #d97d51, #f9a828);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Right Side Social Icons */
+.header-scope-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-scope-social-icons a i {
+  font-size: 1.3rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.header-scope-social-icons a:hover i {
+  color: #000;
+}
+
+/* --- Bottom Navigation --- */
+.header-scope-bottom {
+  background-color: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-scope-main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header-scope-nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.header-scope-nav-menu a {
+  display: block;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease;
+}
+
+/* Capitalize all except SDGS link */
+.header-scope-nav-menu li:not(:nth-child(6)) a {
+  text-transform: capitalize;
+}
+
+.header-scope-nav-menu li:nth-child(6) a {
+  text-transform: uppercase;
+}
+
+.header-scope-nav-menu a:hover {
+  background-color: #444;
+}
+
+/* --- Replace text logo with image --- */
+.header-logo-img {
+  height: 70px;/* adjust as needed */
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Ensure logo aligns perfectly with header center */
+.header-scope-top-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* --- HERO BANNER SECTION --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500&display=swap');
+
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+/* ✨ Main Heading - Bold, Gradient & Glow */
+.banner-overlay h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #ffb703, #fb8500, #ff006e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 25px rgba(255, 136, 0, 0.2);
+  margin-bottom: 15px;
+}
+
+/* ✨ Subtext - Elegant & Soothing */
+.banner-overlay p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: #f8fafc;
+  margin-bottom: 35px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ✨ Button with Glow & Hover Flip */
+.banner-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  background: linear-gradient(135deg, #ff006e, #fb8500);
+  color: #fff;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  box-shadow: 0px 4px 15px rgba(255, 136, 0, 0.3);
+}
+
+.banner-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #fb8500, #ff006e);
+  box-shadow: 0px 8px 25px rgba(255, 136, 0, 0.4);
+}
+
+/* --- Fade-Up Animation --- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1.2s ease forwards;
+}
+.delay-1 { animation-delay: 0.4s; }
+.delay-2 { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .banner-overlay h1 {
+    font-size: 2.4rem;
+  }
+
+  .banner-overlay p {
+    font-size: 1rem;
+  }
+
+  .banner-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
+/* =================================== */
+/* available courses section styles       */
+.courses-section {
+  background: #4a2e46;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  max-width: 420px;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.courses-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.courses-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #f9a828, #a03c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.courses-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #f9a828;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  text-align: left;
+}
+
+.courses-list li {
+  font-size: 1rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.courses-list li span {
+  font-size: 0.9rem;
+  color: #f9a828;
+  font-weight: 500;
+}
+
+.btn-course-details {
+  display: inline-block;
+  background: linear-gradient(135deg, #a03c7d, #f9a828);
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-course-details:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f9a828, #a03c7d);
+}
+/* =================================== */
+/* enrollment section styles       */
+
+.enrollment-section {
+  background: #4a2e46;
+  color: #fff;
+  text-align: center;
+  padding: 45px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif;
+  max-width: 420px;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
+.enrollment-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.enroll-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #f9a828, #a03c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.enroll-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #f9a828;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.enroll-text p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #e5e5e5;
+  letter-spacing: 0.5px;
+}
+
+.enroll-text h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f9a828;
+  margin-bottom: 25px;
+  text-shadow: 0px 0px 10px rgba(249, 168, 40, 0.4);
+}
+
+.btn-enroll {
+  display: inline-block;
+  background: linear-gradient(135deg, #a03c7d, #f9a828);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-enroll:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f9a828, #a03c7d);
+  box-shadow: 0px 6px 15px rgba(249, 168, 40, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .enroll-title {
+    font-size: 1.5rem;
+  }
+
+  .enroll-text h4 {
+    font-size: 1.4rem;
+  }
+
+  .btn-enroll {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+/*--------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.cad-showcase-section {
+  background-color: #ffffff;
+  padding: 100px 8%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.cad-showcase-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  gap: 50px;
+  position: relative;
+}
+
+.cad-showcase-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Connected image style */
+.cad-showcase-image {
+  flex: 1.2;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.cad-showcase-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), transparent 60%);
+  opacity: 0.8;
+}
+
+.cad-showcase-row.reverse .cad-showcase-image::after {
+  background: linear-gradient(to left, rgba(0,0,0,0.4), transparent 60%);
+}
+
+.cad-showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.cad-showcase-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Text box connected with image */
+.cad-showcase-content {
+  flex: 1;
+  background: rgba(74, 46, 70, 0.9);
+  border-left: 5px solid #f9a828;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transform: translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cad-showcase-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.cad-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #f9a828, #a03c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Courses list */
+.cad-course-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.cad-course-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  font-size: 1rem;
+}
+
+.cad-course-list li span {
+  color: #f9a828;
+  font-size: 0.9rem;
+}
+
+/* Enrollment text */
+.cad-subtext {
+  font-size: 1.2rem;
+  color: #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.cad-highlight {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f9a828;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(249, 168, 40, 0.5);
+}
+
+/* Buttons */
+.cad-btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #a03c7d, #f9a828);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cad-btn-primary:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #f9a828, #a03c7d);
+  box-shadow: 0 0 20px rgba(249, 168, 40, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cad-showcase-row {
+    flex-direction: column;
+  }
+
+  .cad-showcase-row.reverse {
+    flex-direction: column;
+  }
+
+  .cad-showcase-content {
+    text-align: center;
+    border-left: none;
+    border-top: 5px solid #f9a828;
+  }
+
+  .cad-course-list li {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* Fade In Animation */
+.cad-showcase-row {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: cadFadeUp 1.3s ease forwards;
+}
+
+.cad-showcase-row.reverse {
+  animation-delay: 0.4s;
+}
+
+@keyframes cadFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Mobile toggle */
+.header-scope-mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+
+ /*this is for below the moving gallery*/
+    /* =================================== */
+/* Capital Academy Intro Section       */
+/* =================================== */
+
+.art-section-wrapper {
+  position: relative;
+  padding: 120px 20px;
+  text-align: center;
+  background: #f9f9f9; /* Light background */
+  overflow: hidden;
+  color: #222; /* Dark text for readability */
+  border-bottom: 1px solid #ddd; /* subtle divider */
+}
+
+/* Decorative dark blur shapes */
+.art-section-wrapper::before,
+.art-section-wrapper::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: 1;
+}
+
+/* Left dark accent */
+.art-section-wrapper::before {
+  width: 300px;
+  height: 300px;
+  background: #2c2c2c;
+  top: -60px;
+  left: -80px;
+}
+
+/* Right dark accent */
+.art-section-wrapper::after {
+  width: 400px;
+  height: 400px;
+  background: #4a4a9f;
+  bottom: -100px;
+  right: -100px;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-25px); }
+}
+
+/* Text block styling */
+.intro-text-block.aesthetic {
+  position: relative;
+  z-index: 2; /* above shapes */
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Tagline */
+.tagline {
+  display: inline-block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #4a4a9f;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Heading */
+.intro-text-block.aesthetic h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.intro-text-block.aesthetic h2 span {
+  background: linear-gradient(90deg, #4a4a9f, #e1701a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Paragraph */
+.intro-text-block.aesthetic p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Button */
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #2c2c2c, #4a4a9f);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+  background: linear-gradient(135deg, #4a4a9f, #e1701a);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .art-section-wrapper {
+    padding: 80px 15px;
+  }
+
+  .art-section-wrapper::before,
+  .art-section-wrapper::after {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* =================================== */
+/*offered courses section*/
+
+
+
+/* =================================== */
+/* 3. RESPONSIVE HEADER STYLES         */
+/* =================================== */
+
+@media (max-width: 900px) {
+
+  /* --- Allow header to grow vertically --- */
+  .site-header {
+    height: auto; /* Allow header to grow as content stacks */
+  }
+
+  /* --- Top Bar: Stack all content --- */
+  .header-scope-top {
+    flex-direction: column; /* Stack all top bar items vertically */
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  /* --- Top Bar: Re-order items --- */
+  .header-scope-top-center {
+    order: 1; /* Logo first */
+  }
+  
+  .header-scope-top-left {
+    order: 2; /* Contact info second */
+    flex-direction: row; /* Show contact info side-by-side */
+    flex-wrap: wrap; /* Allow wrapping if screen is tiny */
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .header-scope-top-right {
+    order: 3; /* Social icons last */
+  }
+
+  /* --- Top Bar: Adjust logo size --- */
+  .header-scope-logo {
+    font-size: 1.5rem; /* Smaller font for mobile logo */
+    text-align: center;
+  }
+  
+  .header-logo-img {
+    height: 50px; /* Smaller logo image */
+  }
+  
+  /* --- Bottom Bar: Reposition for hamburger --- */
+  .header-scope-bottom {
+    justify-content: flex-end; /* Push hamburger button to the right */
+    padding: 0 5%; /* Add some padding so icon isn't on the edge */
+  }
+
+  .header-scope-main-nav {
+    position: relative; /* CRITICAL: Anchors the absolute-positioned menu */
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  /* --- Hamburger Button --- */
+  .header-scope-mobile-nav-toggle {
+    display: block; /* Show the hamburger button */
+    background: none;
+    border: none;
+    color: #ffffff; /* White icon to match nav text */
+    font-size: 1.8rem;
+    padding: 10px; /* Makes it easier to tap */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .header-scope-mobile-nav-toggle:hover {
+    color: #ddd;
+  }
+  
+  /* --- Navigation Menu (Dropdown) --- */
+  .header-scope-nav-menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position it right below the nav bar */
+    left: 0;
+    background-color: #2c2c2c;
+    z-index: 1000;
+    border-top: 1px solid #444;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Add depth */
+  }
+
+  /* --- This class is toggled by JavaScript --- */
+  .header-scope-nav-menu.active {
+    display: flex; /* Show the menu */
+  }
+
+  .header-scope-nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-scope-nav-menu a {
+    padding: 15px; /* Make tap targets larger */
+    border-bottom: 1px solid #444;
+  }
+
+  .header-scope-nav-menu li:last-child a {
+    border-bottom: none; /* Remove border from last item */
+  }
+}
+
+
+/* =================================== */
+/* 2. GLOBAL UTILITY CLASSES (HELPERS) */
+/* =================================== */
+
+/* --- .container --- */
+/* This is the combination of all the '.container' rules. */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* --- .section-title --- */
+/* A global class for all section headings */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- .btn (Example Button) --- */
+/* A global class for buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.btn:hover {
+    background-color: #555;
+    border-color: #555;
+}
+
+
+/* === Banner + Gallery Scoped Section === */
+.banner-scope {
+  position: relative;
+}
+
+/* --- 1. Fixed Banner --- */
+.banner-scope-fixed-banner-container {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: 45vh;
+  background-color: #ffffff;
+  z-index: -1;
+}
+
+.banner-scope-banner-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  content: url('https://placehold.co/800x300/ffffff/a0a0a0?text=Your+Banner+Image+Here&font=lato');
+}
+
+/* --- 2. Scrollable Content Wrapper --- */
+.banner-scope-content-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-top: 0vh;
+  background-color: #f5f3f7;
+  padding-bottom: 60px;
+}
+
+/* --- 3. Gallery Section --- */
+.banner-scope-gallery-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.banner-scope-gallery-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Infinite Circular Scroller --- */
+.banner-scope-scroller {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent);
+}
+
+.banner-scope-scroller-inner {
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+  animation: banner-scope-scroll 40s linear infinite;
+}
+
+.banner-scope-scroller-inner img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 4px solid #ffffff;
+}
+
+@keyframes banner-scope-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes banner-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.banner-scope-scroller-inner { animation: banner-scroll 40s linear infinite; }
+
+
+/* --- View All Button --- */
+.banner-scope-view-all-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 8px 16px;
+  border: 1px solid #aaa;
+  background-color: #fdfdfd;
+  color: #555;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.banner-scope-view-all-btn:hover {
+  background-color: #eee;
+  border-color: #888;
+}
+
+
+/* =================================== */
+/* VISION • MISSION • VALUE SECTION    */
+/* =================================== */
+
+.vmv-scope .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vmv-scope ul {
+  list-style-position: inside;
+}
+
+/* --- Main VMV Section --- */
+.vmv-scope.vmv-section {
+  background-color: #2c2c2c; /* Dark background */
+  padding: 60px 0;
+  color: #ffffff; /* ✅ Visible text color */
+  margin-top: 0; /* ✅ Push section below fixed banner */
+  position: relative;
+  z-index: 2; /* ✅ Ensure it stays above the banner when scrolled */
+}
+
+/* --- VMV Cards --- */
+.vmv-scope .vmv-card {
+  background-color: #dcdcdc; /* Light gray card */
+  border-radius: 8px;
+  padding: 30px 40px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  color: #111; /* ✅ Text readable on light card */
+
+  /* Scroll animation */
+  opacity: 1;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* --- Animation Delays --- */
+.vmv-scope .vmv-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+.vmv-scope .vmv-card:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+/* --- Active State (JS adds .is-visible) --- */
+.vmv-scope .vmv-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Typography --- */
+.vmv-scope .vmv-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  z-index: 3;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.vmv-scope .vmv-card p,
+.vmv-scope .vmv-card li {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.vmv-scope .vmv-card li {
+  margin-bottom: 8px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .vmv-scope .vmv-card {
+    padding: 25px 20px;
+  }
+
+  .vmv-scope .vmv-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* =================================== */
+/* TEAM SECTION                        */
+/* =================================== */
+
+.team-scope.team-section {
+  padding: 60px 0;
+}
+
+.team-scope .section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-scope .team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.team-scope .team-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- Hover effect for card --- */
+.team-scope .team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Team Image --- */
+.team-scope .team-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+/* Middle card gray background */
+.team-scope .team-image.gray-bg img {
+  background-color: #aaaaaa;
+}
+
+/* --- Team Info --- */
+.team-scope .team-info {
+  background-color: #4a4a4a;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.team-scope .team-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.team-scope .team-info .title {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 2px 0 5px;
+}
+
+.team-scope .team-info .email {
+  font-size: 0.8rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* --- More Info Toggle (on hover) --- */
+.team-scope .more-info {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding-top 0.4s ease-out;
+}
+
+.team-scope .team-card:hover .more-info {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 15px;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .team-scope .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .team-scope .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =================================== */
+/* UPCOMING BATCH SECTION              */
+/* =================================== */
+
+.batch-scope .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.batch-scope .section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.batch-scope.upcoming-batch-section {
+  padding: 60px 0;
+  background-color: #f5f3f7;
+}
+
+.batch-scope .batch-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.batch-scope .batch-card {
+  background-color: #8a8a8a;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  flex-basis: 420px;
+  flex-grow: 1;
+  max-width: 450px;
+}
+
+.batch-scope .batch-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.batch-scope .batch-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.batch-scope .batch-card p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.batch-scope .btn-enroll {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.batch-scope .btn-enroll:hover {
+  background-color: #555555;
+}
+
+/* =================================== */
+/* WHY JOIN CHHAPAAK SECTION           */
+/* =================================== */
+.why-join-section {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 80px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-join-section .section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #f9a828, #a03c7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* === GRID - 3 cards per row === */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 30px; /* space between cards */
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: #2b2130;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.feature-card i {
+  font-size: 2rem;
+  color: #f9a828;
+  margin-bottom: 12px;
+}
+
+.feature-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #e5e5e5;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(145deg, #3b2a3f, #241622);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+}
+
+
+/* =================================== */
+/* ART SECTION                         */
+/* =================================== */
+
+.art-scope.art-section-wrapper {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 60px 0;
+}
+
+/* --- Introductory Text Block --- */
+.art-scope .intro-text-block {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+
+.art-scope .intro-text-block h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d9534f;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.art-scope .intro-text-block h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.art-scope .intro-text-block p {
+  font-size: 1rem;
+  color: #777;
+  max-width: 700px;
+  margin: 0 auto 25px auto;
+}
+
+/* --- Buttons --- */
+.art-scope .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  text-transform: capitalize;
+}
+
+.art-scope .btn-light {
+  background-color: #e0e0e0;
+  color: #555;
+}
+
+.art-scope .btn-light:hover {
+  background-color: #cccccc;
+}
+
+.art-scope .btn-dark {
+  background-color: #555;
+  color: #ffffff;
+}
+
+.art-scope .btn-dark:hover {
+  background-color: #777;
+}
+
+/* --- Features Grid (2x2) --- */
+.art-scope .features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #2c2c2c;
+  overflow: hidden;
+}
+
+/* --- Grid Image --- */
+.art-scope .grid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Grid Text Box --- */
+.art-scope .grid-text-box {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.art-scope .grid-text-box h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* --- Offered Courses --- */
+.art-scope .courses-list p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.art-scope .courses-list .separator {
+  color: #888;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.art-scope .courses-list .btn {
+  margin-top: 25px;
+}
+
+/* --- Open Enrollment --- */
+.art-scope .enroll-text p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 2px;
+}
+
+.art-scope .enroll-text h4 {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .art-scope .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .art-scope .intro-text-block h2 {
+    font-size: 1.8rem;
+  }
+
+  .art-scope .grid-text-box {
+    padding: 40px;
+    min-height: 300px;
+  }
+}
+/* =================================== */
+/* FOOTER SECTION                      */
+/* =================================== */
+
+.footer-scope.site-footer {
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+/* --- Footer Main Content (4-column grid) --- */
+.footer-scope .footer-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding: 60px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Shared Column Styles --- */
+.footer-scope .footer-title {
+  color: #999999;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.footer-scope .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-scope .footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-scope .footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-scope .footer-links a:hover {
+  color: #cccccc;
+  text-decoration: underline;
+}
+
+/* --- Column 1: Logo & Affiliates --- */
+.footer-scope .logo-affiliates .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.footer-scope .logo-affiliates .footer-logo .logo-icon {
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.footer-scope .logo-affiliates .footer-logo small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #dddddd;
+  line-height: 1.2;
+}
+
+.footer-scope .logo-affiliates .footer-title {
+  margin-top: 25px;
+}
+
+.footer-scope .logo-affiliates .emblem {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* --- Column 4: Get in Touch --- */
+.footer-scope .get-in-touch p {
+  font-size: 0.95rem;
+  margin: 0 0 15px 0;
+}
+
+.footer-scope .get-in-touch a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-scope .get-in-touch a:hover {
+  text-decoration: underline;
+}
+
+/* --- Footer Bottom (Copyright Bar) --- */
+.footer-scope .footer-bottom {
+  background-color: #1a1a1a;
+  color: #888888;
+  text-align: center;
+  padding: 20px 5%;
+  font-size: 0.8rem;
+}
+
+.footer-scope .footer-bottom p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* --- Responsive (Mobile) View --- */
+@media (max-width: 900px) {
+  .footer-scope .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-scope .footer-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-scope .footer-column {
+    /* text-align: center; */
+  }
+
+  .footer-scope .logo-affiliates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-scope .footer-links {
+    /* text-align: center; */
+  }
+}
+
+
+.au-banner-section {
+    position: relative; /* Acts as an anchor for absolutely positioned children */
+    min-height: 70vh; /* Set a good default height */
+    padding: 4rem 1rem; /* Padding for content */
+    
+    /* Background image setup. Replace the URL with your own image. */
+    background-image: url('https://placehold.co/1920x1080/666/999?text=Replace+Me+With+Building+Image');
+    background-size: cover;
+    background-position: center;
+    
+    /* Flexbox to center the main content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    color: white; /* Default text color */
+    text-align: center;
+    overflow: hidden; /* Ensures the shape doesn't leak out */
+}
+
+/* * Dark overlay with lens flare effect
+  * This ::before pseudo-element darkens the image for text readability
+  * and adds a subtle glow effect like in the image.
+*/
+.au-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Sits above the background image */
+
+    /* * A radial gradient for the lens flare (top-left)
+      * combined with a linear gradient for the overall dark overlay.
+    */
+    background: 
+        radial-gradient(
+            circle at 15% 20%, 
+            rgba(255, 255, 255, 0.15), 
+            transparent 50%
+        ),
+        linear-gradient(
+            rgba(0, 0, 0, 0.4), 
+            rgba(0, 0, 0, 0.4)
+        );
+}
+
+/* * Abstract orange shape 
+  * This is the decorative element behind the text.
+*/
+.au-banner-shape {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    
+    /* Adjust width and height as needed */
+    width: 220px; 
+    height: 350px;
+    
+    /* Gradient matching the image */
+    background: linear-gradient(180deg, #f7b733, #e1701a);
+    
+    /* * A clip-path to create the specific curved/pointed bottom.
+      * This polygon traces the shape:
+      * 1. Top-left (0 0)
+      * 2. Top-right (100% 0)
+      * 3. Bottom-right curve point 1 (100% 70%)
+      * 4. Bottom-right curve point 2 (90% 85%)
+      * 5. Bottom tip (50% 100%)
+      * 6. Bottom-left curve point 1 (10% 85%)
+      * 7. Bottom-left curve point 2 (0 70%)
+      * ...and back to top-left
+    */
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 85%, 50% 100%, 10% 85%, 0 70%);
+    
+    transform: translateX(-50%); /* Centers the shape */
+    z-index: 2; /* Sits above the overlay */
+}
+
+/* * Main content container 
+  * Holds the heading and paragraph.
+*/
+.au-banner-content {
+    position: relative;
+    z-index: 3; /* Sits on top of the orange shape */
+    max-width: 600px; /* Constrains text width for readability */
+}
+
+.au-banner-heading {
+    /* Using clamp() for responsive font size */
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.au-banner-text {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.6;
+    opacity: 0.9; /* Makes it slightly softer than pure white */
+}
+
+/* * Logo container 
+  * Positioned at the bottom-right.
+*/
+.au-banner-logo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 3; /* Sits on top of the overlay */
+    text-align: right;
+}
+
+.au-banner-logo-main {
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.au-banner-logo-sub {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* * Responsive adjustments for smaller screens
+*/
+@media (max-width: 768px) {
+    .au-banner-section {
+        min-height: 60vh;
+        padding: 3rem 1rem;
+    }
+
+    /* On smaller screens, move the logo to be centered at the bottom */
+    .au-banner-logo {
+        position: relative; /* Change from absolute */
+        bottom: auto;
+        right: auto;
+        text-align: center;
+        margin-top: 3rem; /* Add space above it */
+    }
+
+    .au-banner-shape {
+        /* Scale the shape down slightly */
+        width: 180px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+      .au-banner-shape {
+        width: 150px;
+        height: 250px;
+    }
+}
+
+/* =================================== */
+/*     COURSES SECTION                */
+/* =================================== */
+
+.cc-courses-section {
+    width: 100%;
+    /* Using the dark gray from the image */
+    background-color: #ffffff; 
+    padding: 4rem 1rem; /* 4rem top/bottom, 1rem left/right */
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Hide scroll-in elements initially */
+}
+
+.cc-courses-main-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.cc-courses-subtitle {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 400;
+    color: #230303; /* Lighter text for subtitle */
+    margin-bottom: 3rem; /* Space before the grid */
+}
+
+/* * Courses grid container
+  * Uses CSS Grid to create the 2x2 layout.
+*/
+.cc-courses-grid {
+    display: grid;
+    /* Two equal-width columns */
+    grid-template-columns: 1fr 1fr; 
+    gap: 0; /* No gap, as the cards are seamless */
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden; /* To keep rounded corners */
+    border-radius: 12px; /* Added rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Added shadow */
+}
+
+/* * Individual course card
+  * Each card is a flex container.
+*/
+.cc-courses-card {
+    display: flex;
+    /* Darker gray for the text content side */
+    background-color: #2e2e2e; 
+    text-align: left;
+    color: #e0e0e0;
+    overflow: hidden; /* Contain the image zoom */
+    
+    /* Styles for scroll-in animation */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Class added by JS when element is in view */
+.cc-courses-card--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the animation for each card */
+.cc-courses-card:nth-child(2) { transition-delay: 0.1s; }
+.cc-courses-card:nth-child(3) { transition-delay: 0.2s; }
+.cc-courses-card:nth-child(4) { transition-delay: 0.3s; }
+
+
+/* * Image block within the card
+  * Uses flex: 1 to take up half the space.
+*/
+.cc-courses-image {
+    flex: 1; /* Takes up 50% of the card */
+    min-height: 400px; /* Ensures a good height */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease; /* Animation for zoom */
+}
+
+/* Image zoom hover effect */
+.cc-courses-card:hover .cc-courses-image {
+    transform: scale(1.05);
+}
+
+/* * Content block within the card
+  * Uses flex: 1 to take up the other half.
+*/
+.cc-courses-content {
+    flex: 1; /* Takes up 50% of the card */
+    padding: 2.5rem; /* Increased padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* * Modifier class to reverse the order
+  * This swaps the image and text.
+*/
+.cc-courses-card--reversed {
+    flex-direction: row-reverse;
+}
+
+.cc-courses-title {
+    font-size: 1.4rem; /* Increased size */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.cc-courses-price {
+    font-size: 1.1rem; /* Increased size */
+    font-weight: 500;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+}
+
+.cc-courses-details {
+    font-size: 0.9rem; /* Increased size */
+    line-height: 1.8; /* Increased spacing */
+    color: #c0c0c0; /* Lighter gray for details */
+    margin-bottom: 2rem;
+}
+
+/* Specific styling for the detail lines */
+.cc-courses-details p {
+    margin-bottom: 0.3rem;
+}
+
+.cc-courses-button {
+    display: inline-block;
+    /* Using brand color from other component */
+    background-color: #e1701a; 
+    color: #ffffff;
+    padding: 0.85rem 1.75rem;
+    text-decoration: none;
+    font-weight: 700; /* Bolder text */
+    border-radius: 6px; /* Slightly more rounded */
+    transition: all 0.3s ease;
+    text-align: center;
+    align-self: flex-start; /* Aligns button to the left */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cc-courses-button:hover {
+    background-color: #f7b733; /* Brighter orange hover */
+    color: #2e2e2e; /* Dark text on hover */
+    transform: translateY(-3px); /* Button lift */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* * Modal Styles
+*/
+.cc-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cc-modal-overlay--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cc-modal-content {
+    background: #2e2e2e;
+    color: #e0e0e0;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.cc-modal-overlay--visible .cc-modal-content {
+    transform: scale(1);
+}
+
+.cc-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+.cc-modal-close:hover {
+    opacity: 1;
+}
+
+.cc-modal-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.cc-modal-price {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+}
+
+.cc-modal-details {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #c0c0c0;
+}
+.cc-modal-details p {
+    margin-bottom: 0.3rem;
+}
+
+
+/* * Responsive adjustments
+*/
+
+/* For tablets */
+@media (max-width: 992px) {
+    .cc-courses-grid {
+        /* Stack to one column */
+        grid-template-columns: 1fr;
+    }
+
+    /* On tablets, we want all cards to have the same layout */
+    .cc-courses-card {
+        flex-direction: row; 
+    }
+    .cc-courses-card--reversed {
+        flex-direction: row; /* Override the reverse */
+    }
+    .cc-courses-image {
+        min-height: 300px; /* Adjust height for tablet */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .cc-courses-section {
+        padding: 3rem 0; /* No left/right padding */
+    }
+
+    .cc-courses-grid {
+        border-radius: 0; /* Full width, no radius */
+    }
+
+    .cc-courses-card {
+        /* Stack image on top of content */
+        flex-direction: column;
+    }
+
+    /* This ensures all cards stack the same way on mobile */
+    .cc-courses-card--reversed {
+        flex-direction: column;
+    }
+
+    .cc-courses-content {
+        padding: 2rem 1.5rem;
+    }
+   
+ 
+}
