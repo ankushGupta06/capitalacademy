@@ -1,0 +1,185 @@
+
+/* =================================== */
+/*     CONTACT SECTION           */
+/* =================================== */
+
+.contact-page__section {
+    width: 100%;
+    padding: 60px 0;
+}
+
+.cc-contact-main-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: -1.5rem;
+    text-align: center;
+}
+
+.contact-page__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    /* 2 equal columns */
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* --- Grid Items (Text, Image, Map, Form) --- */
+.contact-page__grid-item {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Important for rounded corners on images/maps */
+}
+
+/* --- Text Box Styling --- */
+.contact-page__text-box {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* --- NEW CHANGES --- */
+    background-color: #333;
+    color: #f0f0f0; /* Light text for readability */
+}
+
+.contact-page__text-box h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    /* --- UPDATED COLOR --- */
+    color: #F9A828; /* Your Sunset accent color */
+}
+
+.contact-page__text-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- Image Box Styling (Fixed Ratio) --- */
+.contact-page__image-box {
+    width: 100%;
+    /* Set a minimum height to ensure it looks good */
+    min-height: 400px; 
+    height: 100%;
+}
+
+.contact-page__image-box img {
+    width: 100%;
+    height: 100%;
+    /** This is the key property for fixed ratio images **/
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.contact-page__image-box:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Map Box Styling --- */
+.contact-page__map-box {
+    width: 100%;
+    min-height: 450px; /* Match form height */
+    height: 100%;
+}
+
+.contact-page__map-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Form Box Styling --- */
+.contact-page__form-box {
+    padding: 40px;
+
+    /* --- NEW CHANGES --- */
+    background-color: #333;
+    color: #f0f0f0; /* Light text for readability */
+}
+
+.contact-page__form-box h2 {
+    margin-top: 0;
+    
+    /* --- UPDATED COLOR --- */
+    color: #F9A828; /* Your Sunset accent color */
+}
+
+.contact-page__form-group {
+    margin-bottom: 20px;
+}
+
+.contact-page__form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    /* Color is inherited from .contact-page__form-box (#f0f0f0) */
+}
+
+.contact-page__form-group input,
+.contact-page__form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555; /* Darker border for dark bg */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    background-color: #444; /* Darker input bg */
+    color: #FFFFFF; /* White input text */
+}
+
+.contact-page__submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #A03C7D; /* Your Accent Rose Plum */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-page__submit-btn:hover {
+    background-color: #F9A828; /* Your Sunset accent color on hover */
+    color: #2A1A1F; /* Dark text on hover */
+    transform: translateY(-2px);
+}
+
+/* --- JavaScript Animation Classes --- */
+/* .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .contact-page__container {
+        /* Stack items on top of each other */
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page__text-box,
+    .contact-page__form-box {
+        padding: 30px;
+    }
+
+    .contact-page__text-box h2 {
+        font-size: 1.8rem;
+    }
+}

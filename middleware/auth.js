@@ -1,27 +1,36 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-/**
- * Middleware for authentication and role-based authorization.
- * 
- * Usage:
- *   app.get('/admin', authenticateToken(['admin']), handler);
- *   app.get('/faculty', authenticateToken(['faculty', 'admin']), handler);
- *   app.get('/public', authenticateToken(), handler); // no role restriction
- */
 module.exports = function authenticateToken(allowedRoles = []) {
   return (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // "Bearer <token>"
 
-    if (!token)
+    let token;
+
+    // 1️⃣ Try: Authorization header (Bearer token)
+    const authHeader = req.headers['authorization'];
+    if (authHeader) {
+      const parts = authHeader.split(' ');
+      if (parts.length === 2 && parts[0] === 'Bearer') {
+        token = parts[1];
+      }
+    }
+
+    // 2️⃣ If not found, try: Cookie token
+    if (!token && req.cookies?.token) {
+      token = req.cookies.token;
+    }
+
+    // 3️⃣ If still no token → block access
+    if (!token) {
       return res.status(401).json({ message: 'Access denied. No token provided.' });
+    }
 
     try {
+      // 4️⃣ Verify token
       const verified = jwt.verify(token, process.env.JWT_SECRET);
-      req.user = verified; // { id, email, role }
+      req.user = verified;
 
-      // ✅ Role check (only if roles are specified)
+      // 5️⃣ Role-based check
       if (allowedRoles.length > 0 && !allowedRoles.includes(req.user.role)) {
         return res.status(403).json({ message: 'Access denied. Insufficient permissions.' });
       }
