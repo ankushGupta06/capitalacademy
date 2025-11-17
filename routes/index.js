@@ -6,6 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
+router.get('/', async (req, res, next) => {
+  res.render('course', { title: 'Courses' });
+});
+
+/* GET static contact form page */
+router.get('/', (req, res) => {
+  res.render('contact', { title: 'Contact Us' });
+});
+
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'About Us' });
 });
